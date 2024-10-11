@@ -1,0 +1,22 @@
+
+#root{
+  width: 100%;
+  background-color: rgb(171, 255, 227);
+}
+
+* {
+  box-sizing: border-box;
+    margin: 0;
+}
+
+div.box-container {
+  background-color: #080E49;
+}
+
+.box-container {
+    /* display: flex;
+    height: 100vh;
+    justify-content: center; */
+    flex-wrap: wrap;
+    align-content: center;
+}

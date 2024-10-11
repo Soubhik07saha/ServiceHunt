@@ -1,0 +1,1 @@
+This is a user-friendly platform that allows individuals to offer or find services based on location and occupation. Users can register as freelancers by providing their details, or search for services they need and view the contact information of professionals in their area. It simplifies the process of connecting service providers with potential clients.
