@@ -22,7 +22,8 @@ const GivePage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/register', formData);
+      const response = await axios.post('service-hunt.vercel.app
+/register', formData);
       console.log(response.data);
       alert('Registration Complete. You can go back now.');
       window.location.reload();
