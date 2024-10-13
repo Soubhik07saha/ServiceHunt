@@ -5,7 +5,14 @@ const EmployeeModel = require('./models/Employee');
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+    {
+        origin:["https://deploy-mern-lwhq.vercel.app"],
+        methods:["POST", "GET"],
+        credentials: true
+        
+    }
+));
 
 // MongoDB connection string
 mongoose.connect("mongodb+srv://soubhiksahaetce222711:x53D-r6E%40Wz8mB8@cluster0.nw2jtsc.mongodb.net/Employee?retryWrites=true&w=majority")
