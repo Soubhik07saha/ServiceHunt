@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import EmployeeModel from './models/Employee';
+import EmployeeModel from '../models/Employee'; // Adjust the path as necessary
 
 const app = express();
 app.use(express.json());
