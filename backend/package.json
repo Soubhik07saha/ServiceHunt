@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node api/index.js", // Adjust to point to your main file
-    "dev": "nodemon api/index.js"  // For local development
+    "start": "node backend/index.js", // This will run the server locally
+    "dev": "nodemon backend/index.js" // For local development
   },
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.21.0",
-    "mongoose": "^8.7.0"
+    "express": "^4.x.x",
+    "mongoose": "^6.x.x",
+    "cors": "^2.x.x"
   }
 }
