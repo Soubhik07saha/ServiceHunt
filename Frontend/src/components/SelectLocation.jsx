@@ -14,8 +14,8 @@ const SelectLocation = ({ selectedService }) => {  // Accept selectedService as 
   useEffect(() => {
     const fetchCities = async () => {
       try {
-        const response = await axios.get('https://service-hunt.vercel.app
-/api/cities');
+        // Corrected URL string
+        const response = await axios.get('https://service-hunt.vercel.app/api/cities');
         setCities(response.data);
       } catch (error) {
         console.error('Error fetching cities:', error);
@@ -45,7 +45,6 @@ const SelectLocation = ({ selectedService }) => {  // Accept selectedService as 
     // Pass both city and service to the details route
     navigate(`/details/${city}/${selectedService}`);  // Corrected template string
   };
-  
 
   return (
     <div className="select-location">
