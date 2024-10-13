@@ -12,7 +12,7 @@ const FindService = ({ onServiceSelect }) => {
   useEffect(() => {
     const fetchOccupations = async () => {
       try {
-        const response = await axios.get('service-hunt.vercel.app
+        const response = await axios.get('https://service-hunt.vercel.app
 /api/occupations');
         setServices(response.data); // Set the services from the backend
       } catch (error) {
