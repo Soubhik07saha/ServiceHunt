@@ -5,20 +5,18 @@ const EmployeeModel = require('./models/Employee');
 
 const app = express();
 app.use(express.json());
-app.use(cors(
-    {
-        origin:["https://service-hunt-proo.vercel.app"],
-        methods:["POST", "GET"],
-        credentials: true
-        
-    }
-));
+
+// CORS configuration
+app.use(cors({
+    origin: ["https://service-hunt-proo.vercel.app", "http://localhost:3000"], // Allow specific origins
+    methods: ["POST", "GET"],
+    credentials: true
+}));
 
 // MongoDB connection string
 mongoose.connect("mongodb+srv://soubhiksahaetce222711:x53D-r6E%40Wz8mB8@cluster0.nw2jtsc.mongodb.net/Employee?retryWrites=true&w=majority")
     .then(() => console.log("MongoDB Connected"))
     .catch(err => console.error("Error connecting to MongoDB:", err));
-    
 
 // POST route for registering an employee
 app.post('/register', (req, res) => {
@@ -57,17 +55,16 @@ app.get('/api/cities', async (req, res) => {
     }
 });
 
+// GET route to fetch details based on city and service
 app.get('/api/details/:city/:service', async (req, res) => {
     const { city, service } = req.params;
     try {
-      const details = await EmployeeModel.find({ location: city, occupation: service });
-      res.json(details);
+        const details = await EmployeeModel.find({ location: city, occupation: service });
+        res.json(details);
     } catch (error) {
-      res.status(500).json({ message: 'Error fetching details', error: error.message });
+        res.status(500).json({ message: 'Error fetching details', error: error.message });
     }
-  });
-  
-
+});
 
 // Start the server
 app.listen(3001, () => {
