@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors(
     {
-        origin:["https://service-hunt-proo.vercel.app/"],
+        origin:["https://service-hunt-proo.vercel.app"],
         methods:["POST", "GET"],
         credentials: true
         
