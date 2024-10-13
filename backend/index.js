@@ -18,10 +18,7 @@ app.use(cors(
 mongoose.connect("mongodb+srv://soubhiksahaetce222711:x53D-r6E%40Wz8mB8@cluster0.nw2jtsc.mongodb.net/Employee?retryWrites=true&w=majority")
     .then(() => console.log("MongoDB Connected"))
     .catch(err => console.error("Error connecting to MongoDB:", err));
-
-app.get("/", (req, res) => {
-    res.json("hello");
-})    
+    
 
 // POST route for registering an employee
 app.post('/register', (req, res) => {
