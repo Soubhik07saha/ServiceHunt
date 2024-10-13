@@ -29,7 +29,7 @@ const GivePage = () => {
       window.location.reload();
     } catch (error) {
       console.error('Error submitting form', error);
-      alert('There was an error submitting the form. Please try again.');
+      alert('There was an error submitting the form: ' + (error.response ? error.response.data.message : error.message));
     }
   };
 
