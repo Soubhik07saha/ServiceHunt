@@ -1,17 +1,16 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom'; // Import useParams to get route params
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const Details = () => {
-  const { city, service } = useParams(); // Get the city and service from the route params
+  const { city, service } = useParams();
   const [details, setDetails] = useState([]);
 
   useEffect(() => {
     const fetchDetails = async () => {
       try {
-        const response = await axios.get(`https://service-hunt.vercel.app
-/api/details/${city}/${service}`);
-        setDetails(response.data); // Set the fetched details
+        const response = await axios.get(`https://your-backend.vercel.app/api/details/${city}/${service}`);
+        setDetails(response.data);
       } catch (error) {
         console.error('Error fetching details:', error);
       }
