@@ -1,5 +1,6 @@
 import './Main.css';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import axios from 'axios'; 
 
 const GivePage = () => {
@@ -11,6 +12,8 @@ const GivePage = () => {
     address: '',
     occupation: '',
   });
+
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleChange = (e) => {
     setFormData({
@@ -25,7 +28,7 @@ const GivePage = () => {
       const response = await axios.post('https://service-hunt.vercel.app/api/register', formData);
       console.log(response.data);
       alert('Registration Complete. You can go back now.');
-      window.location.reload();
+      navigate('/'); // Redirect to the home route or any other route you want
     } catch (error) {
       console.error('Error submitting form', error);
       alert('There was an error submitting the form. Please try again.');
