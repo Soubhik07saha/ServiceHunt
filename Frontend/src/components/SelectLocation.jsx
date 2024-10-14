@@ -14,7 +14,7 @@ const SelectLocation = ({ selectedService }) => {
   useEffect(() => {
     const fetchCities = async () => {
       try {
-        const response = await axios.get('https://your-backend.vercel.app/api/cities');
+        const response = await axios.get('https://service-hunt.vercel.app/api/cities');
         setCities(response.data);
       } catch (error) {
         console.error('Error fetching cities:', error);
