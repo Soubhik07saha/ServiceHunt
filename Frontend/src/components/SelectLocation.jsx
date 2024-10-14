@@ -1,21 +1,20 @@
 import './Main.css';
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
-import PropTypes from 'prop-types'; // Import PropTypes
+import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 
-const SelectLocation = ({ selectedService }) => {  // Accept selectedService as a prop
+const SelectLocation = ({ selectedService }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredCities, setFilteredCities] = useState([]);
   const [cities, setCities] = useState([]);
   const [selectedCity, setSelectedCity] = useState(null);
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchCities = async () => {
       try {
-        // Corrected URL string
-        const response = await axios.get('https://service-hunt.vercel.app/api/cities');
+        const response = await axios.get('https://your-backend.vercel.app/api/cities');
         setCities(response.data);
       } catch (error) {
         console.error('Error fetching cities:', error);
@@ -42,8 +41,7 @@ const SelectLocation = ({ selectedService }) => {  // Accept selectedService as 
     setSelectedCity(city);
     setSearchTerm(city);
     setFilteredCities([]);
-    // Pass both city and service to the details route
-    navigate(`/details/${city}/${selectedService}`);  // Corrected template string
+    navigate(`/details/${city}/${selectedService}`);
   };
 
   return (
@@ -70,9 +68,8 @@ const SelectLocation = ({ selectedService }) => {  // Accept selectedService as 
   );
 };
 
-// Add PropTypes validation for selectedService
 SelectLocation.propTypes = {
-  selectedService: PropTypes.string.isRequired, // Add PropTypes validation for the selectedService prop
+  selectedService: PropTypes.string.isRequired,
 };
 
 export default SelectLocation;
