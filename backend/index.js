@@ -1,22 +1,14 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import cors from 'cors';
-import EmployeeModel from '../models/Employee'; // Adjust the path as necessary
+const express = require("express");
+const mongoose = require('mongoose');
+const cors = require("cors");
+const EmployeeModel = require('./models/Employee');
 
 const app = express();
 app.use(express.json());
-
-// CORS configuration
-app.use(cors({
-    origin: ["https://service-hunt-proo.vercel.app", "http://localhost:3000"], // Allow specific origins
-    methods: ["POST", "GET"],
-    credentials: true
-}));
+app.use(cors());  // Add CORS to allow communication from your frontend
 
 // MongoDB connection string
-const MONGODB_URI = "mongodb+srv://soubhiksahaetce222711:x53D-r6E%40Wz8mB8@cluster0.nw2jtsc.mongodb.net/Employee?retryWrites=true&w=majority";
-
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://soubhiksahaetce222711:x53D-r6E%40Wz8mB8@cluster0.nw2jtsc.mongodb.net/Employee?retryWrites=true&w=majority")
     .then(() => console.log("MongoDB Connected"))
     .catch(err => console.error("Error connecting to MongoDB:", err));
 
@@ -69,4 +61,4 @@ app.get('/api/details/:city/:service', async (req, res) => {
 });
 
 // Export the app for Vercel
-export default app;
+module.exports = app;
