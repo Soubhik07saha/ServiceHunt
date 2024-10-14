@@ -99,4 +99,16 @@ const GivePage = () => {
             </div>
             <button type="submit">Submit</button>
           </form>
-       
+        </div>
+      </div>
+
+      <div className='grid-givepage-image'>
+        <div className='box-image'>
+          <img src="./src/assets/Images/serviceImg2.jpg" alt="formimg" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default GivePage;
