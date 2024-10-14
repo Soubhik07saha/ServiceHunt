@@ -22,14 +22,13 @@ const GivePage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Corrected the URL here
-      const response = await axios.post('https://service-hunt.vercel.app/register', formData);
+      const response = await axios.post('https://your-backend.vercel.app/api/register', formData);
       console.log(response.data);
       alert('Registration Complete. You can go back now.');
       window.location.reload();
     } catch (error) {
       console.error('Error submitting form', error);
-      alert('There was an error submitting the form: ' + (error.response ? error.response.data.message : error.message));
+      alert('There was an error submitting the form. Please try again.');
     }
   };
 
@@ -100,16 +99,4 @@ const GivePage = () => {
             </div>
             <button type="submit">Submit</button>
           </form>
-        </div>
-      </div>
-
-      <div className='grid-givepage-image'>
-        <div className='box-image'>
-          <img src="./assets/Images/serviceImg2.jpg" alt="formimg" />
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default GivePage;
+       
