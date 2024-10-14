@@ -12,6 +12,11 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://soubhiksahaetce222711
     .then(() => console.log("MongoDB Connected"))
     .catch(err => console.error("Error connecting to MongoDB:", err));
 
+// Root route
+app.get('/', (req, res) => {
+    res.send("Welcome to the Employee API!"); // Simple message for the root route
+});
+
 // POST route for registering an employee
 app.post('/api/register', (req, res) => {
     EmployeeModel.create(req.body)
