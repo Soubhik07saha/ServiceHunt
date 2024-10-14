@@ -1,28 +1,26 @@
 import './Main.css';
 import { useState, useEffect } from 'react';
-import PropTypes from 'prop-types'; // Import PropTypes
-import axios from 'axios'; // Import Axios for API requests
+import PropTypes from 'prop-types';
+import axios from 'axios';
 
 const FindService = ({ onServiceSelect }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredServices, setFilteredServices] = useState([]);
-  const [services, setServices] = useState([]); // This will hold services from the API
+  const [services, setServices] = useState([]);
 
-  // Fetch occupations from the backend when the component mounts
   useEffect(() => {
     const fetchOccupations = async () => {
       try {
-        const response = await axios.get('https://service-hunt.vercel.app/api/occupations'); // Fixed the URL
-        setServices(response.data); // Set the services from the backend
+        const response = await axios.get('https://your-backend.vercel.app/api/occupations');
+        setServices(response.data);
       } catch (error) {
         console.error('Error fetching occupations:', error);
       }
     };
 
     fetchOccupations();
-  }, []); // Empty dependency array to fetch only once on component mount
+  }, []);
 
-  // Update search term and filter services based on search input
   const handleSearchChange = (e) => {
     const searchValue = e.target.value;
     setSearchTerm(searchValue);
@@ -37,16 +35,13 @@ const FindService = ({ onServiceSelect }) => {
     }
   };
 
-  // Handle service selection
   const handleServiceSelect = (service) => {
-    onServiceSelect(service); // Notify the parent of the selected service
+    onServiceSelect(service);
   };
 
   return (
     <div className="find-service">
       <h2>Find a Service</h2>
-      
-      {/* Search box */}
       <input
         type="text"
         placeholder="Search for a service..."
@@ -54,8 +49,6 @@ const FindService = ({ onServiceSelect }) => {
         onChange={handleSearchChange}
         className="search-box"
       />
-      
-      {/* Dropdown of filtered services */}
       {filteredServices.length > 0 && (
         <ul className="service-list">
           {filteredServices.map((service, index) => (
@@ -69,9 +62,8 @@ const FindService = ({ onServiceSelect }) => {
   );
 };
 
-// Add PropTypes validation
 FindService.propTypes = {
-  onServiceSelect: PropTypes.func.isRequired, // Expect onServiceSelect to be a function
+  onServiceSelect: PropTypes.func.isRequired,
 };
 
 export default FindService;
