@@ -153,59 +153,25 @@
 
   /* GivePage Styles Start */
 
-  .grid-givepage-layout {
-    display: grid;
-    grid-template-columns: auto auto auto; /* Three columns */
-    grid-template-areas: 'form form image';
-    height: 100vh;
-  }
-
-  /* Naming grid items */
-  .grid-givepage-form {
-      grid-area: form;
-      padding: 0;
-    }
-  .grid-givepage-image {
-      grid-area: image;
-      padding: 0;
-    }
-
-  /* Grid GivePage Form Style */
-  .grid-givepage-layout > .grid-givepage-form {
-    background-color: #080E49;
+/* body {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  .form-box {
-    width: 500px;
-    padding: 50px;
-  }
-  .grid-givepage-form > .form-box > h2 { color: #f1f1f1;}
-
-  .grid-givepage-image > .box-image {
-    padding: 0;
+    height: 100vh;
     margin: 0;
-  }
-  .grid-givepage-image > .box-image > img {
-    float: left;
-    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;  // Optional: A light background for contrast 
+  } */
+
+  .grid-givepage-layout {
+    display: grid;
+    grid-template-columns: auto auto;
     height: 100vh;
   }
-
-  @media screen and (max-width: 760px) {
-    .grid-givepage-layout {
-        grid-template-columns: auto;
-        grid-template-rows : auto;
-        grid-template-areas : 
-          'form';
-    }
-    .grid-givepage-image {
-        display: none;
-      }
+  .grid-givepage-form {
+    background-color: #080E49;
   }
-
+  .grid-givepage-form > h2 { color: #f1f1f1;}
   /****** form styling of givePage start ******/
   form {
     max-width: 400px;
