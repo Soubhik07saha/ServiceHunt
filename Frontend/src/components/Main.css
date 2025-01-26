@@ -287,7 +287,7 @@ div.box-item p {
   justify-content: center; /* Vertically center the content */
   align-items: center; /* Horizontally center the content */
   padding: 20px;
-  background-image: url('C:\Users\ADMIN111\Desktop\Find service Froject\Frontend\src\assets\Images\male-hand-touching-service-concept_220873-7591.png'); /* Replace with your image URL */
+  background-image: url('https://raw.githubusercontent.com/Soubhik07saha/ServiceHunt/refs/heads/main/Frontend/src/assets/Images/male-hand-touching-service-concept_220873-7591.png'); /* Replace with your image URL */
   background-size: cover; /* Make sure the image covers the entire area */
   background-position: center;
   background-repeat: no-repeat;
