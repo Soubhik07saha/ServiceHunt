@@ -378,7 +378,7 @@ div.box-item p {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-image: url('C:\Users\ADMIN111\Desktop\Find service Froject\Frontend\src\assets\Images\cities.jpg'); /* Replace with your image path */
+    background-image: url('https://raw.githubusercontent.com/Soubhik07saha/ServiceHunt/refs/heads/main/Frontend/src/assets/Images/cities.jpg'); /* Replace with your image path */
     background-size: cover; /* Ensure the image covers the entire area */
     background-position: center;
     background-repeat: no-repeat;
