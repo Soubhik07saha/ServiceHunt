@@ -107,7 +107,7 @@ const GivePage = () => {
 
       <div className='grid-givepage-image'>
         <div className='box-image'>
-          <img src="./src/assets/Images/serviceImg2.jpg" alt="formimg" />
+          <img src="https://raw.githubusercontent.com/Soubhik07saha/ServiceHunt/refs/heads/main/Frontend/src/assets/Images/ServiceImg2.jpg" />
         </div>
       </div>
     </div>
