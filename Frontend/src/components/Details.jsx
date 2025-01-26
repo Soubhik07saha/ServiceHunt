@@ -10,7 +10,8 @@ const Details = () => {
   useEffect(() => {
     const fetchDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/api/details/${city}/${service}`);
+        // Updated API URL to use the correct backend endpoint
+        const response = await axios.get(`https://service-hunt-backend.vercel.app/api/details/${city}/${service}`);
         setDetails(response.data);
       } catch (error) {
         console.error('Error fetching details:', error);
@@ -31,6 +32,8 @@ const Details = () => {
               <p><strong>Name:</strong> {detail.name}</p>
               <p><strong>Age:</strong> {detail.age}</p>
               <p><strong>Phone Number:</strong> {detail.phone}</p>
+              <p><strong>Address:</strong> {detail.address}</p>
+              {/* Add other fields if necessary */}
             </li>
           ))}
         </ul>
