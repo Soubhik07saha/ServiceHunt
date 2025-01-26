@@ -12,7 +12,8 @@ const FindService = ({ onServiceSelect }) => {
   useEffect(() => {
     const fetchOccupations = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/occupations');
+        // Updated API URL to use the hosted backend
+        const response = await axios.get('https://service-hunt-backend.vercel.app/api/occupations');
         setServices(response.data); // Set the services from the backend
       } catch (error) {
         console.error('Error fetching occupations:', error);
@@ -33,7 +34,7 @@ const FindService = ({ onServiceSelect }) => {
       );
       setFilteredServices(filtered);
     } else {
-      setFilteredServices([]);
+      setFilteredServices([]); // Clear filtered services if search term is empty
     }
   };
 
