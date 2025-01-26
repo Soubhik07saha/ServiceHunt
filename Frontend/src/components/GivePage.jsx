@@ -24,15 +24,16 @@ const GivePage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Data Submitted:", formData); // Log the form data to verify
+    console.log("Form Data Submitted:", formData); // Log the form data
     try {
-      const response = await axios.post('https://service-hunt.vercel.app/api/register', formData);
-      console.log(response.data); // Log the response from the backend
+      // Update the API URL to match the backend hosted URL
+      const response = await axios.post('https://service-hunt-backend.vercel.app/api/register', formData);
+      console.log("Backend Response:", response.data); // Log the response from the backend
       alert('Registration Complete. You can go back now.');
       navigate('/'); // Redirect to the home route or any other route you want
     } catch (error) {
-      console.error('Error submitting form', error.response || error); // Log the error response
-      alert('There was an error submitting the form. Please try again.');
+      console.error('Error submitting form:', error.response); // Log the error response for debugging
+      alert(`There was an error submitting the form. Error: ${error.response?.data?.message || error.message}`);
     }
   };
 
@@ -108,7 +109,7 @@ const GivePage = () => {
 
       <div className='grid-givepage-image'>
         <div className='box-image'>
-          <img src="https://raw.githubusercontent.com/Soubhik07saha/ServiceHunt/refs/heads/main/Frontend/src/assets/Images/ServiceImg2.jpg" alt="Service" />
+          <img src="https://raw.githubusercontent.com/Soubhik07saha/ServiceHunt/refs/heads/main/Frontend/src/assets/Images/ServiceImg2.jpg" />
         </div>
       </div>
     </div>
